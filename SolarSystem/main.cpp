@@ -10,7 +10,7 @@ static int	day = 0,
 			uranusYear = year + 1,
 			neptuneYear = year + 1,
 			mercuryYear = year + 1;
-void init(void){
+void initialize(void){
 	glClearColor(0.0, 0.0, 0.0, 0.0);
 	glShadeModel(GL_FLAT);
 }
@@ -108,38 +108,35 @@ void reshape(int w, int h) {
 	gluLookAt(2.0, 4.0, 20.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0); //observerPosition
 }
 
-void pushbutton(unsigned char button, int x, int y) {
 
-	switch (button) {
-	case 'a':
-		year = (year + 6) % 360;
-		day = (day + 10) % 360;
-		month = (month + 30) % 360;
-		marsYear = (marsYear + 5) % 360;
-		jupiterYear = (jupiterYear + 4) % 360;
-		saturnYear = (saturnYear + 3) % 360;
-		uranusYear = (uranusYear + 2) % 360;
-		neptuneYear = (neptuneYear + 1) % 360;
-		venusYear = (venusYear + 7) % 360;
-		mercuryYear = (mercuryYear + 8) % 360;
+void timer(int iUnused)
+{
+	
+	year = (year + 6) % 360;
+	day = (day + 10) % 360;
+	month = (month + 30) % 360;
+	marsYear = (marsYear + 5) % 360;
+	jupiterYear = (jupiterYear + 4) % 360;
+	saturnYear = (saturnYear + 3) % 360;
+	uranusYear = (uranusYear + 2) % 360;
+	neptuneYear = (neptuneYear + 1) % 360;
+	venusYear = (venusYear + 7) % 360;
+	mercuryYear = (mercuryYear + 8) % 360;
 
-		glutPostRedisplay();
-		break;
-	default:
-		break;
-	}
+	glutPostRedisplay();
+	glutTimerFunc(50, timer, 0);
 }
 
 int main(int argc, char** argv) {
 	glutInit(&argc, argv);
 	glutInitDisplayMode(GLUT_DEPTH | GLUT_DOUBLE | GLUT_RGBA);
-	glutInitWindowSize(1280, 800);
+	glutInitWindowSize(2000, 1500);
 	glutInitWindowPosition(0,0);
 	glutCreateWindow("Solar System");
-	init();
+	initialize();
 	glutDisplayFunc(display);
 	glutReshapeFunc(reshape);
-	glutKeyboardFunc(pushbutton);
+	timer(0);
 	glEnable(GL_DEPTH_TEST);
 	glutMainLoop();
 	return 0;
