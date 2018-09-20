@@ -29,3 +29,10 @@ Dependencies:
 basecode: https://www.youtube.com/watch?v=epB-2WjrnnM
 
 aditional inspiration: https://www.youtube.com/watch?v=RNTNzXoHuPk
+
+
+
+texture for planets:
+
+* [tutorial](https://www.youtube.com/watch?v=n4k7ANAFsIQ)
+* bmp maps for planets [here](http://planetpixelemporium.com/)

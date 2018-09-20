@@ -122,11 +122,19 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="imageloader.h" />
+    <ClInclude Include="stb_image.h" />
     <ClInclude Include="main.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\..\Documents\OpenGL\glad.c" />
+    <ClCompile Include="imageloader.cpp" />
     <ClCompile Include="main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\..\..\..\Desktop\earthbump1k.bmp" />
+    <Image Include="..\..\..\..\Desktop\earthcloudmap.bmp" />
+    <Image Include="..\..\..\..\Desktop\earthmap1k.bmp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
